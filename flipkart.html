@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Roboto, Arial, sans-serif;
+            background-color: #f1f3f6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2874f0;
+            padding: 8px 0;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+        }
+
+        .header-content {
+            max-width: 1248px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            gap: 12px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 21px;
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-subtext {
+            font-size: 11px;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .logo-subtext span:first-child {
+            color: #fff;
+        }
+
+        .logo-subtext span:nth-child(2) {
+            color: #ffe500;
+            font-weight: 500;
+        }
+
+        .plus-icon {
+            color: #ffe500;
+            font-size: 9px;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 564px;
+            position: relative;
+            background-color: #fff;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 48px 10px 16px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-input::placeholder {
+            color: #717478;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #2874f0;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .login-btn {
+            background-color: #fff;
+            color: #2874f0;
+            border: none;
+            padding: 5px 40px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .login-btn:hover {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .header-link:hover {
+            opacity: 0.8;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+        }
+
+        .navbar-content {
+            max-width: 1248px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 8px;
+        }
+
+        .nav-item {
+            padding: 12px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #212121;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 100px;
+        }
+
+        .nav-item:hover {
+            color: #2874f0;
+        }
+
+        .nav-icon { 
+            width: 64px;
+            height: 64px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.3rem;
+            object-fit: contain;
+        }
+
+        /* Banner Carousel */
+        .banner-section {
+            max-width: 1248px;
+            margin: 12px auto;
+            padding: 0 8px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-item-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 40px;
+        }
+
+        .banner-text {
+            color: #fff;
+            max-width: 500px;
+        }
+
+        .banner-text h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .banner-text p {
+            font-size: 20px;
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .banner-btn {
+            background-color: #fff;
+            color: #2874f0;
+            border: none;
+            padding: 14px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .banner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .banner-image-container {
+            width: 350px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+
+        .carousel-item-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .carousel-item-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 16px;
+        }
+
+        .carousel-btn {
+            background-color: rgba(255,255,255,0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #fff;
+            transform: scale(1.1);
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background-color: #fff;
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        /* Product Section */
+        .product-section {
+            max-width: 1248px;
+            margin: 12px auto;
+            background-color: #fff;
+            padding: 24px;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.04);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #212121;
+        }
+
+        .view-all {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 2px;
+            background-color: #2874f0;
+            transition: all 0.3s;
+        }
+
+        .view-all:hover {
+            background-color: #1c5fdb;
+            box-shadow: 0 2px 8px rgba(40,116,240,0.4);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            text-align: center;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            border: 1px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            border-color: #e0e0e0;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background-color: #ff9f00;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 2px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            color: #212121;
+            margin-bottom: 8px;
+            font-weight: 500;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212121;
+            margin-bottom: 4px;
+        }
+
+        .product-original-price {
+            font-size: 14px;
+            color: #878787;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .product-discount {
+            font-size: 13px;
+            color: #388e3c;
+            font-weight: 500;
+        }
+
+        .product-rating {
+            display: inline-flex;
+            align-items: center;
+            background-color: #388e3c;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-bottom: 8px;
+            gap: 2px;
+        }
+
+        /* Deals Section */
+        .deals-section {
+            max-width: 1248px;
+            margin: 12px auto;
+            padding: 0 8px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .deal-card {
+            background-color: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,.04);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .deal-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,.12);
+            transform: translateY(-4px);
+        }
+
+        .deal-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+        }
+
+        .deal-content {
+            padding: 16px;
+        }
+
+        .deal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212121;
+            margin-bottom: 8px;
+        }
+
+        .deal-subtitle {
+            font-size: 14px;
+            color: #878787;
+            margin-bottom: 12px;
+        }
+
+        .deal-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #388e3c;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #172337;
+            color: #fff;
+            padding: 40px 0 16px;
+            margin-top: 24px;
+        }
+
+        .footer-content {
+            max-width: 1248px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 0 8px 32px;
+        }
+
+        .footer-section h3 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #878787;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2874f0;
+        }
+
+        .footer-bottom {
+            max-width: 1248px;
+            margin: 0 auto;
+            padding: 24px 8px 0;
+            border-top: 1px solid #454d5e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #878787;
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-text">Flipkart</div>
+                <div class="logo-subtext">
+                    <span>Explore</span>
+                    <span>Plus</span>
+                    <span class="plus-icon">+</span>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search for Products, Brands and More">
+                <button class="search-icon">🔍</button>
+            </div>
+            <div class="header-right">
+                <button class="login-btn">Login</button>
+                <a href="#" class="header-link">Become a Seller</a>
+                <a href="#" class="header-link">
+                    <span>More</span>
+                    <span>▾</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span class="cart-icon">🛒</span>
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🛒</div>
+                <span>Grocery</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">📱</div>
+                <span>Mobiles</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">👔</div>
+                <span>Fashion</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">💻</div>
+                <span>Electronics</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🏠</div>
+                <span>Home & Furniture</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">⚡</div>
+                <span>Appliances</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">✈️</div>
+                <span>Travel</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">💄</div>
+                <span>Beauty, Toys & More</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🚲</div>
+                <span>Two Wheelers</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Banner Carousel -->
+    <section class="banner-section">
+        <div class="carousel">
+            <div class="carousel-inner" id="carouselInner">
+                <div class="carousel-item carousel-item-1">
+                    <div class="banner-text">
+                        <h1>Mega Electronics Sale</h1>
+                        <p>Up to 80% OFF on Top Brands</p>
+                        <button class="banner-btn">Shop Now →</button>
+                    </div>
+                    <div class="banner-image-container">
+                        💻
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-2">
+                    <div class="banner-text">
+                        <h1>Fashion Fiesta</h1>
+                        <p>Trending Styles at Best Prices</p>
+                        <button class="banner-btn">Explore Now →</button>
+                    </div>
+                    <div class="banner-image-container">
+                        👗
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-3">
+                    <div class="banner-text">
+                        <h1>Home Makeover</h1>
+                        <p>Transform Your Space Today</p>
+                        <button class="banner-btn">Discover →</button>
+                    </div>
+                    <div class="banner-image-container">
+                        🛋️
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevSlide()">❮</button>
+                <button class="carousel-btn" onclick="nextSlide()">❯</button>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active" onclick="goToSlide(0)"></div>
+                <div class="indicator" onclick="goToSlide(1)"></div>
+                <div class="indicator" onclick="goToSlide(2)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="deals-section">
+        <div class="deal-card">
+            <div class="deal-image">📱</div>
+            <div class="deal-content">
+                <div class="deal-title">Top Mobiles</div>
+                <div class="deal-subtitle">Best Selling Smartphones</div>
+                <div class="deal-price">From ₹9,999</div>
+            </div>
+        </div>
+        <div class="deal-card">
+            <div class="deal-image">💻</div>
+            <div class="deal-content">
+                <div class="deal-title">Laptops</div>
+                <div class="deal-subtitle">Work From Home Essentials</div>
+                <div class="deal-price">From ₹29,990</div>
+            </div>
+        </div>
+        <div class="deal-card">
+            <div class="deal-image">⌚</div>
+            <div class="deal-content">
+                <div class="deal-title">Smart Watches</div>
+                <div class="deal-subtitle">Track Your Fitness</div>
+                <div class="deal-price">From ₹1,999</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section - Electronics -->
+    <section class="product-section">
+        <div class="section-header">
+            <h2 class="section-title">Best of Electronics</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">TOP RATED</div>
+                    📱
+                </div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">Premium Smartphones</div>
+                <div class="product-price">₹12,999 <span class="product-original-price">₹19,999</span></div>
+                <div class="product-discount">35% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">BESTSELLER</div>
+                    💻
+                </div>
+                <div class="product-rating">4.3 ⭐</div>
+                <div class="product-name">Gaming Laptops</div>
+                <div class="product-price">₹45,990 <span class="product-original-price">₹65,990</span></div>
+                <div class="product-discount">30% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    🎧
+                </div>
+                <div class="product-rating">4.7 ⭐</div>
+                <div class="product-name">Wireless Headphones</div>
+                <div class="product-price">₹1,499 <span class="product-original-price">₹4,999</span></div>
+                <div class="product-discount">70% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">NEW</div>
+                    ⌚
+                </div>
+                <div class="product-rating">4.4 ⭐</div>
+                <div class="product-name">Smart Watches</div>
+                <div class="product-price">₹2,499 <span class="product-original-price">₹6,999</span></div>
+                <div class="product-discount">64% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    📷
+                </div>
+                <div class="product-rating">4.6 ⭐</div>
+                <div class="product-name">DSLR Cameras</div>
+                <div class="product-price">₹28,999 <span class="product-original-price">₹45,999</span></div>
+                <div class="product-discount">37% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    🖨️
+                </div>
+                <div class="product-rating">4.2 ⭐</div>
+                <div class="product-name">All-in-One Printers</div>
+                <div class="product-price">₹5,999 <span class="product-original-price">₹11,999</span></div>
+                <div class="product-discount">50% Off</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section - Fashion -->
+    <section class="product-section">
+        <div class="section-header">
+            <h2 class="section-title">Fashion Top Deals</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">TRENDING</div>
+                    👕
+                </div>
+                <div class="product-rating">4.1 ⭐</div>
+                <div class="product-name">Men's Casual Shirts</div>
+                <div class="product-price">₹399 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">80% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    👗
+                </div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">Women's Ethnic Wear</div>
+                <div class="product-price">₹599 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">70% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">HOT DEAL</div>
+                    👟
+                </div>
+                <div class="product-rating">4.3 ⭐</div>
+                <div class="product-name">Sports Shoes</div>
+                <div class="product-price">₹899 <span class="product-original-price">₹2,499</span></div>
+                <div class="product-discount">64% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    👜
+                </div>
+                <div class="product-rating">4.4 ⭐</div>
+                <div class="product-name">Designer Handbags</div>
+                <div class="product-price">₹499 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">75% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    ⌚
+                </div>
+                <div class="product-rating">4.6 ⭐</div>
+                <div class="product-name">Analog Watches</div>
+                <div class="product-price">₹699 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">65% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    🕶️
+                </div>
+                <div class="product-rating">4.2 ⭐</div>
+                <div class="product-name">Sunglasses</div>
+                <div class="product-price">₹299 <span class="product-original-price">₹999</span></div>
+                <div class="product-discount">70% Off</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section - Home & Furniture -->
+    <section class="product-section">
+        <div class="section-header">
+            <h2 class="section-title">Home & Furniture</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">🛋️</div>
+                <div class="product-rating">4.3 ⭐</div>
+                <div class="product-name">Sofa Sets</div>
+                <div class="product-price">₹19,999 <span class="product-original-price">₹45,999</span></div>
+                <div class="product-discount">56% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🛏️</div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">King Size Beds</div>
+                <div class="product-price">₹14,999 <span class="product-original-price">₹29,999</span></div>
+                <div class="product-discount">50% Off</div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">💡</div>
+                <div class="product-rating">4.4 ⭐
