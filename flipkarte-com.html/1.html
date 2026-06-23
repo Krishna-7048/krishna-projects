@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-text">Flipkart</div>
+                <div class="logo-subtext">
+                    <span>Explore</span>
+                    <span>Plus</span>
+                    <span class="plus-icon">+</span>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search for Products, Brands and More" aria-label="Search">
+                <button class="search-icon" aria-label="Search">🔍</button>
+            </div>
+            <div class="header-right">
+                <button class="login-btn">Login</button>
+                <a href="#" class="header-link">
+                    <span>Become a Seller</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span>More</span>
+                    <span>▾</span>
+                </a>
+                <a href="#" class="header-link">
+                    <span class="cart-icon">🛒</span>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <div class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+
+    <div class="mobile-menu">
+        <a href="#" class="mobile-menu-item">Home</a>
+        <a href="#" class="mobile-menu-item">Become a Seller</a>
+        <a href="#" class="mobile-menu-item">Gift Cards</a>
+        <a href="#" class="mobile-menu-item">Help Center</a>
+        <a href="#electronics" class="mobile-menu-item">Electronics</a>
+        <a href="#fashion" class="mobile-menu-item">Fashion</a>
+        <a href="#home" class="mobile-menu-item">Home & Furniture</a>
+        <a href="#" class="mobile-menu-item">Orders</a>
+        <a href="#" class="mobile-menu-item">Wishlist</a>
+        <a href="#" class="mobile-menu-item">Notifications</a>
+        <a href="#" class="mobile-menu-item">Account Settings</a>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🛒</div>
+                <span>Grocery</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">📱</div>
+                <span>Mobiles</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">👔</div>
+                <span>Fashion</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">💻</div>
+                <span>Electronics</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🏠</div>
+                <span>Home & Furniture</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">⚡</div>
+                <span>Appliances</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">✈️</div>
+                <span>Travel</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">💄</div>
+                <span>Beauty & More</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🚲</div>
+                <span>Two Wheelers</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="banner-section">
+        <div class="carousel" id="carousel">
+            <div class="carousel-inner" id="carouselInner">
+                <div class="carousel-item carousel-item-1">
+                    <div class="banner-text">
+                        <h1>Mega Electronics Sale</h1>
+                        <p>Up to 80% OFF on Top Brands</p>
+                        <button class="banner-btn">Shop Now →</button>
+                    </div>
+                    <div class="banner-image-container">💻</div>
+                </div>
+                <div class="carousel-item carousel-item-2">
+                    <div class="banner-text">
+                        <h1>Fashion Fiesta</h1>
+                        <p>Trending Styles at Best Prices</p>
+                        <button class="banner-btn">Explore Now →</button>
+                    </div>
+                    <div class="banner-image-container">👗</div>
+                </div>
+                <div class="carousel-item carousel-item-3">
+                    <div class="banner-text">
+                        <h1>Home Makeover</h1>
+                        <p>Transform Your Space Today</p>
+                        <button class="banner-btn">Discover →</button>
+                    </div>
+                    <div class="banner-image-container">🛋️</div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevSlide()" aria-label="Previous slide">❮</button>
+                <button class="carousel-btn" onclick="nextSlide()" aria-label="Next slide">❯</button>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active" onclick="goToSlide(0)" aria-label="Slide 1"></div>
+                <div class="indicator" onclick="goToSlide(1)" aria-label="Slide 2"></div>
+                <div class="indicator" onclick="goToSlide(2)" aria-label="Slide 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="deals-section">
+        <div class="deal-card">
+            <div class="deal-image">📱</div>
+            <div class="deal-content">
+                <div class="deal-title">Top Mobiles</div>
+                <div class="deal-subtitle">Best Selling Smartphones</div>
+                <div class="deal-price">From ₹9,999</div>
+            </div>
+        </div>
+        <div class="deal-card">
+            <div class="deal-image">💻</div>
+            <div class="deal-content">
+                <div class="deal-title">Laptops</div>
+                <div class="deal-subtitle">Work From Home Essentials</div>
+                <div class="deal-price">From ₹29,990</div>
+            </div>
+        </div>
+        <div class="deal-card">
+            <div class="deal-image">⌚</div>
+            <div class="deal-content">
+                <div class="deal-title">Smart Watches</div>
+                <div class="deal-subtitle">Track Your Fitness</div>
+                <div class="deal-price">From ₹1,999</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section fade-in" id="electronics">
+        <div class="section-header">
+            <h2 class="section-title">Best of Electronics</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">TOP RATED</div>
+                    📱
+                </div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">Premium Smartphones</div>
+                <div class="product-price">₹12,999 <span class="product-original-price">₹19,999</span></div>
+                <div class="product-discount">35% Off</div>
+                <div id="phone1">
+                    <button class="add-btn"
+                    onclick="showControls('phone1','Premium Smartphones',12999)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">BESTSELLER</div>
+                    💻
+                </div>
+                <div class="product-rating">4.3 ⭐</div>
+                <div class="product-name">Gaming Laptops</div>
+                <div class="product-price">₹45,990 <span class="product-original-price">₹65,990</span></div>
+                <div class="product-discount">30% Off</div>
+                <div id="laptop1">
+                    <button class="add-btn"
+                    onclick="showControls('laptop1','Gaming Laptops',45990)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <div class="product-rating">4.7 ⭐</div>
+                <div class="product-name">Wireless Headphones</div>
+                <div class="product-price">₹1,499 <span class="product-original-price">₹4,999</span></div>
+                <div class="product-discount">70% Off</div>
+                <div id="headphone1">
+                    <button class="add-btn"
+                    onclick="showControls('headphone1','Wireless Headphones',1499)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">NEW</div>
+                    ⌚
+                </div>
+                <div class="product-rating">4.4 ⭐</div>
+                <div class="product-name">Smart Watches</div>
+                <div class="product-price">₹2,499 <span class="product-original-price">₹6,999</span></div>
+                <div class="product-discount">64% Off</div>
+                <div id="watch1">
+                    <button class="add-btn"
+                    onclick="showControls('watch1','Smart Watches',2499)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">📷</div>
+                <div class="product-rating">4.6 ⭐</div>
+                <div class="product-name">DSLR Cameras</div>
+                <div class="product-price">₹28,999 <span class="product-original-price">₹45,999</span></div>
+                <div class="product-discount">37% Off</div>
+                <div id="camera1">
+                    <button class="add-btn"
+                    onclick="showControls('camera1','DSLR Cameras',28999)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🖨️</div>
+                <div class="product-rating">4.2 ⭐</div>
+                <div class="product-name">All-in-One Printers</div>
+                <div class="product-price">₹5,999 <span class="product-original-price">₹11,999</span></div>
+                <div class="product-discount">50% Off</div>
+                <div id="printer1">
+                    <button class="add-btn"
+                    onclick="showControls('printer1','All-in-One Printers',5999)">
+                    Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section fade-in" id="fashion">
+        <div class="section-header">
+            <h2 class="section-title">Fashion Top Deals</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">TRENDING</div>
+                    👕
+                </div>
+                <div class="product-rating">4.1 ⭐</div>
+                <div class="product-name">Mens Casual Shirts</div>
+                <div class="product-price">₹399 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">80% Off</div>
+                <div id="shirt1">
+                    <button class="add-btn"
+                    onclick="showControls('shirt1','Mens Casual Shirts',399)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">👗</div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">Womens Ethnic Wear</div>
+                <div class="product-price">₹599 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">70% Off</div>
+                <div id="dress1">
+                    <button class="add-btn"
+                    onclick="showControls('dress1','Women Ethnic Wear',599)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">HOT DEAL</div>
+                    👟
+                </div>
+                <div class="product-rating">4.3 ⭐</div>
+                <div class="product-name">Sports Shoes</div>
+                <div class="product-price">₹899 <span class="product-original-price">₹2,499</span></div>
+                <div class="product-discount">64% Off</div>
+                <div id="shoe1">
+                    <button class="add-btn"
+                    onclick="showControls('shoe1','Sports Shoes',899)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">👜</div>
+                <div class="product-rating">4.4 ⭐</div>
+                <div class="product-name">Designer Handbags</div>
+                <div class="product-price">₹499 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">75% Off</div>
+                <div id="bag1">
+                    <button class="add-btn"
+                    onclick="showControls('bag1','Designer Handbags',499)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <div class="product-rating">4.6 ⭐</div>
+                <div class="product-name">Analog Watches</div>
+                <div class="product-price">₹699 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">65% Off</div>
+                <div id="analog1">
+                    <button class="add-btn"
+                    onclick="showControls('analog1','Analog Watches',699)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🕶️</div>
+                <div class="product-rating">4.2 ⭐</div>
+                <div class="product-name">Sunglasses</div>
+                <div class="product-price">₹299 <span class="product-original-price">₹999</span></div>
+                <div class="product-discount">70% Off</div>
+                <div id="glass1">
+                    <button class="add-btn"
+                    onclick="showControls('glass1','Sunglasses',299)">
+                    Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section fade-in" id="home">
+        <div class="section-header">
+            <h2 class="section-title">Home & Furniture</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">🛋️</div>
+                <div class="product-rating">4.3 ⭐</div>
+                <div class="product-name">Sofa Sets</div>
+                <div class="product-price">₹19,999 <span class="product-original-price">₹45,999</span></div>
+                <div class="product-discount">56% Off</div>
+                <div id="sofa1">
+                    <button class="add-btn"
+                    onclick="showControls('sofa1','Sofa Sets',19999)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🛏️</div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">King Size Beds</div>
+                <div class="product-price">₹14,999 <span class="product-original-price">₹29,999</span></div>
+                <div class="product-discount">50% Off</div>
+                <div id="bed1">
+                    <button class="add-btn"
+                    onclick="showControls('bed1','King Size Beds',14999)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">💡</div>
+                <div class="product-rating">4.4 ⭐</div>
+                <div class="product-name">LED Lights</div>
+                <div class="product-price">₹299 <span class="product-original-price">₹999</span></div>
+                <div class="product-discount">70% Off</div>
+                <div id="light1">
+                    <button class="add-btn"
+                    onclick="showControls('light1','LED Lights',299)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🪑</div>
+                <div class="product-rating">4.2 ⭐</div>
+                <div class="product-name">Office Chairs</div>
+                <div class="product-price">₹3,999 <span class="product-original-price">₹9,999</span></div>
+                <div class="product-discount">60% Off</div>
+                <div id="chair1">
+                    <button class="add-btn"
+                    onclick="showControls('chair1','Office Chairs',3999)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🖼️</div>
+                <div class="product-rating">4.6 ⭐</div>
+                <div class="product-name">Wall Art</div>
+                <div class="product-price">₹599 <span class="product-original-price">₹1,999</span></div>
+                <div class="product-discount">70% Off</div>
+                <div id="wall1">
+                    <button class="add-btn"
+                    onclick="showControls('wall1','Wall Art',599)">
+                    Add
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🌿</div>
+                <div class="product-rating">4.5 ⭐</div>
+                <div class="product-name">Indoor Plants</div>
+                <div class="product-price">₹199 <span class="product-original-price">₹599</span></div>
+                <div class="product-discount">67% Off</div>
+                <div id="plant1">
+                    <button class="add-btn"
+                    onclick="showControls('plant1','Indoor Plants',199)">
+                    Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Flipkart Wholesale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Policy</h3>
+                <ul>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+                <div class="social-icons">
+                    <div class="social-icon">📘</div>
+                    <div class="social-icon">🐦</div>
+                    <div class="social-icon">📺</div>
+                    <div class="social-icon">📸</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <span>© 2026 Flipkart.com</span>
+            </div>
+            <div>
+                <span>🇮🇳 India</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="1.js"></script>
+</body>
+</html>
